@@ -156,10 +156,9 @@ const HomeScreen = ({navigation}) => {
             }}
                 /> 
                 <Text style = {{marginTop: 10}}>All day</Text>
-                
                 </View> 
                 <SelectList name = '' boxStyles = {{
-                    position: 'relative',
+                    position: 'absolute',
                     width: 150,
                     marginLeft: 34, 
                     borderWidth: 0,
@@ -168,12 +167,14 @@ const HomeScreen = ({navigation}) => {
                     dropdownStyles = {{
                         width: 250,
                         marginLeft: 34, 
+                        paddingLeft: 0,
                         backgroundColor: '#FFFFFF',
                         borderWidth: 0
                     }}
                     data = {data} 
                     setSelected = {setSelected} 
                     />
+
                 <View style = {styles.rectangle3}>
                 <Image 
                      source = {require('../assets/icons/task1.png')}
@@ -286,7 +287,6 @@ const styles = StyleSheet.create({
         width: 375,
         height: 105,
         flexDirection: 'row',
-        backgroundColor: '#EEFDBB',
         alignSelf: 'center',
         borderRadius: 7
     },
