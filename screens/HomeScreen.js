@@ -35,7 +35,7 @@ const HomeScreen = ({ navigation }) => {
       image2: require("../assets/icons/edit2.png"),
       image3: require("../assets/icons/delete.png"),
       backgroundColor: "#FDB8B8",
-    }
+    },
   ];
 
   const oneTask = ({ item }) => {
@@ -73,21 +73,21 @@ const HomeScreen = ({ navigation }) => {
           source={item.image2}
           resizeMode="contain"
           style={{
-            width: 30,
+            width: 20,
             Height: 15,
             position: "relative",
             marginLeft: 10,
-            top: -246,
+            top: -245,
           }}
         />
         <Image
           source={item.image3}
           resizeMode="contain"
           style={{
-            width: 22,
-            Height: 15,
+            width: 15,
+            Height: 10,
             position: "relative",
-            marginLeft: 1,
+            marginLeft: 10,
             top: -53,
           }}
         />
@@ -138,7 +138,64 @@ const HomeScreen = ({ navigation }) => {
   //     {key: '47', value: '11:15am'},{key: '48', value: '11:30am'},{key: '49', value: '11:45am'}
   // ];
   return (
-    <View style={{ flexDirection: "column" }}>
+    <View style={{ flexDirection: "column", marginTop: 10 }}>
+      <View style={styles.rectangle5}>
+        <View
+          style={{
+            position: "relative",
+            top: 10,
+            width: 40,
+            height: 40,
+            alignSelf: "flex-start",
+            justifyContent: "space-between",
+            borderRadius: 50,
+          }}
+        >
+          <Image
+            source={require("../assets/icons/back.png")}
+            resizeMode="contain"
+            style={{
+              width: 25,
+              height: 30,
+              alignSelf: "center",
+              borderRadius: 25,
+            }}
+          />
+        </View>
+        <Text
+          style={{
+            alignSelf: "center",
+            fontSize: 25,
+            fontWeight: "800",
+            marginTop: -20,
+          }}
+        >
+          Task Tracker
+        </Text>
+        <View
+          style={{
+            position: "relative",
+            top: -47,
+            width: 40,
+            height: 40,
+            alignSelf: "flex-end",
+            justifyContent: "space-between",
+            borderRadius: 50,
+            backgroundColor: "#FFFFFF",
+          }}
+        >
+          <Image
+            source={require("../assets/icons/001.jpg")}
+            resizeMode="contain"
+            style={{
+              width: 30,
+              height: 40,
+              alignSelf: "center",
+              borderRadius: 25,
+            }}
+          />
+        </View>
+      </View>
       <Text style={{ margin: 10 }}>Title</Text>
       <TextInput
         style={{
@@ -160,7 +217,7 @@ const HomeScreen = ({ navigation }) => {
         }}
       />
       <Image
-        source={require("../assets/icons/edit.png")}
+        source={require("../assets/icons/edit2.png")}
         resizeMode="contain"
         style={{
           position: "relative",
@@ -178,9 +235,9 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 15,
-            marginLeft: 10,
-            width: 25,
-            height: 25,
+            marginLeft: 15,
+            width: 15,
+            height: 15,
           }}
         />
         <Image
@@ -190,8 +247,8 @@ const HomeScreen = ({ navigation }) => {
             position: "relative",
             marginTop: 15,
             marginLeft: 20,
-            width: 25,
-            height: 25,
+            width: 15,
+            height: 15,
           }}
         />
 
@@ -202,8 +259,8 @@ const HomeScreen = ({ navigation }) => {
             position: "relative",
             marginTop: 15,
             marginLeft: 20,
-            width: 25,
-            height: 25,
+            width: 15,
+            height: 15,
           }}
         />
         <Image
@@ -211,10 +268,10 @@ const HomeScreen = ({ navigation }) => {
           resizeMode="contain"
           style={{
             position: "relative",
-            marginTop: 15,
+            marginTop: 12,
             marginLeft: 20,
-            width: 25,
-            height: 25,
+            width: 20,
+            height: 20,
           }}
         />
         <Image
@@ -222,10 +279,10 @@ const HomeScreen = ({ navigation }) => {
           resizeMode="contain"
           style={{
             position: "relative",
-            marginTop: 15,
-            marginLeft: 90,
-            width: 25,
-            height: 25,
+            marginTop: 12,
+            marginLeft: 140,
+            width: 18,
+            height: 18,
           }}
         />
         <Image
@@ -233,10 +290,10 @@ const HomeScreen = ({ navigation }) => {
           resizeMode="contain"
           style={{
             position: "relative",
-            marginTop: 15,
+            marginTop: 12,
             marginLeft: 15,
-            width: 25,
-            height: 28,
+            width: 18,
+            height: 20,
           }}
         />
         <Image
@@ -244,10 +301,10 @@ const HomeScreen = ({ navigation }) => {
           resizeMode="contain"
           style={{
             position: "relative",
-            marginTop: 15,
+            marginTop: 12,
             marginLeft: 20,
-            width: 25,
-            height: 25,
+            width: 20,
+            height: 20,
           }}
         />
       </View>
@@ -278,14 +335,13 @@ const HomeScreen = ({ navigation }) => {
         />
         <Text style={{ marginTop: 10 }}>All day</Text>
       </View>
-      <SafeAreaView>
-        <FlatList
-          ListHeaderComponent={HeaderComponent}
-          data={taskCreated}
-          renderItem={oneTask}
-          ListEmptyComponent={<Text>Empty List</Text>}
-        />
-      </SafeAreaView>
+      <FlatList
+        ListHeaderComponent={HeaderComponent}
+        data={taskCreated}
+        renderItem={oneTask}
+        ListEmptyComponent={<Text>Empty List</Text>}
+      />
+
       {/* <SelectList  boxStyles = {{
                     position: 'relative',
                     width: 150,
@@ -362,7 +418,7 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -40,
+            marginLeft: -42,
             width: 105,
             height: 100,
           }}
@@ -373,7 +429,7 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -40,
+            marginLeft: -42,
             width: 105,
             height: 100,
           }}
@@ -384,7 +440,7 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -40,
+            marginLeft: -42,
             width: 105,
             height: 100,
           }}
@@ -395,7 +451,7 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -40,
+            marginLeft: -42,
             width: 105,
             height: 100,
           }}
@@ -406,7 +462,7 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: -1,
-            marginLeft: -40,
+            marginLeft: -42,
             width: 105,
             height: 115,
           }}
@@ -457,7 +513,7 @@ const styles = StyleSheet.create({
   },
   rectangle: {
     width: 375,
-    height: 55,
+    height: 40,
     flexDirection: "row",
     backgroundColor: "#B8FDBB",
     alignSelf: "center",
@@ -494,6 +550,15 @@ const styles = StyleSheet.create({
     height: 15,
     flexDirection: "row",
     alignSelf: "center",
+    marginTop: 5,
+    borderRadius: 7,
+  },
+  rectangle5: {
+    width: 375,
+    height: 50,
+    flexDirection: "column",
+    alignSelf: "center",
+    backgroundColor: "#ff0000",
     marginTop: 5,
     borderRadius: 7,
   },
