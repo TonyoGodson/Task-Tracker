@@ -407,9 +407,9 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -26,
-            width: 105,
-            height: 100,
+            marginLeft: -7,
+            width: 75,
+            height: 70,
           }}
         />
         <Image
@@ -418,9 +418,9 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -42,
-            width: 105,
-            height: 100,
+            marginLeft: -13,
+            width: 75,
+            height: 70,
           }}
         />
         <Image
@@ -429,9 +429,9 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -42,
-            width: 105,
-            height: 100,
+            marginLeft: -13,
+            width: 75,
+            height: 70,
           }}
         />
         <Image
@@ -440,9 +440,9 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -42,
-            width: 105,
-            height: 100,
+            marginLeft: -13,
+            width: 75,
+            height: 70,
           }}
         />
         <Image
@@ -451,9 +451,9 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: -42,
-            width: 105,
-            height: 100,
+            marginLeft: -13,
+            width: 75,
+            height: 70,
           }}
         />
         <Image
@@ -462,29 +462,29 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: -1,
-            marginLeft: -42,
-            width: 105,
-            height: 115,
+            marginLeft: -13,
+            width: 75,
+            height: 85,
           }}
         />
       </View>
       <View style={styles.rectangle4}>
-        <Text style={{ marginLeft: 10, fontSize: 12, color: "#4D5656" }}>
+        <Text style={{ marginLeft: 15, fontSize: 12, color: "#4D5656" }}>
           Task1
         </Text>
-        <Text style={{ marginLeft: 32, fontSize: 12, color: "#4D5656" }}>
+        <Text style={{ marginLeft: 28, fontSize: 12, color: "#4D5656" }}>
           Task2
         </Text>
-        <Text style={{ marginLeft: 32, fontSize: 12, color: "#4D5656" }}>
+        <Text style={{ marginLeft: 30, fontSize: 12, color: "#4D5656" }}>
           Task3
         </Text>
-        <Text style={{ marginLeft: 32, fontSize: 12, color: "#4D5656" }}>
+        <Text style={{ marginLeft: 30, fontSize: 12, color: "#4D5656" }}>
           Task4
         </Text>
-        <Text style={{ marginLeft: 32, fontSize: 12, color: "#4D5656" }}>
+        <Text style={{ marginLeft: 30, fontSize: 12, color: "#4D5656" }}>
           Task5
         </Text>
-        <Text style={{ marginLeft: 32, fontSize: 12, color: "#52BB69" }}>
+        <Text style={{ marginLeft: 30, fontSize: 12, color: "#52BB69" }}>
           Task6
         </Text>
       </View>
@@ -550,7 +550,7 @@ const styles = StyleSheet.create({
     height: 15,
     flexDirection: "row",
     alignSelf: "center",
-    marginTop: 5,
+    marginTop: -25,
     borderRadius: 7,
   },
   rectangle5: {
