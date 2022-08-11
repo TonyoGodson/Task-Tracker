@@ -45,39 +45,24 @@ const Pickers = () => {
         <Picker.Item
           label="Does not repeat"
           value="0"
-          style={{ width: 2 }}
+          fontSize="2"
         ></Picker.Item>
-        <Picker.Item style={{ width: 2 }} label="Daily" value="1"></Picker.Item>
+        <Picker.Item label="Daily" value="1"></Picker.Item>
+        <Picker.Item label="Weeklyon Tuesday" value="2"></Picker.Item>
         <Picker.Item
-          style={{ width: 2 }}
-          label="Weeklyon Tuesday"
-          value="2"
-        ></Picker.Item>
-        <Picker.Item
-          style={{ width: 2, backgroundColor: "#ff0000" }}
           label="Monthly on the last Tuesday"
           value="3"
         ></Picker.Item>
         <Picker.Item
-          style={{ width: 2 }}
           label="Monthly on the firstTuesday"
           value="4"
         ></Picker.Item>
+        <Picker.Item label="Annually on July 26" value="5"></Picker.Item>
         <Picker.Item
-          style={{ width: 2 }}
-          label="Annually on July 26"
-          value="5"
-        ></Picker.Item>
-        <Picker.Item
-          style={{ width: 2 }}
           label="Every week day (Monday to Friday"
           value="6"
         ></Picker.Item>
-        <Picker.Item
-          style={{ width: 2 }}
-          label="Custom..."
-          value="7"
-        ></Picker.Item>
+        <Picker.Item label="Custom..." value="7"></Picker.Item>
       </Picker>
       {/* <Text>Hello World</Text> */}
     </View>

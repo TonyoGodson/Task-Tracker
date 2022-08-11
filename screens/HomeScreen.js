@@ -14,7 +14,6 @@ import { Calendar } from "react-native-calendars";
 import { Dropdown } from "react-native-material-dropdown-v2";
 import CheckBox from "react-native-check-box";
 
-import Pickers from "./Pickers";
 const HomeScreen = ({ navigation }) => {
   const [showCalendr, setshowCalendr] = useState(false);
 
@@ -430,7 +429,6 @@ const HomeScreen = ({ navigation }) => {
               selectDayBackgroundColor: "#ff0000",
               calendarBackground: "#ffffff",
             }}
-            //   onDateChange={onDateChange}
             style={{
               width: 300,
               borderRadius: 25,
