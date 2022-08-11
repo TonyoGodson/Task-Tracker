@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, useState } from "react";
 import {
   View,
   Button,
@@ -8,9 +8,19 @@ import {
   SafeAreaView,
   StyleSheet,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
+import { Calendar } from "react-native-calendars";
+import { Dropdown } from "react-native-material-dropdown-v2";
+import CheckBox from "react-native-check-box";
 
+import Pickers from "./Pickers";
 const HomeScreen = ({ navigation }) => {
+  const [showCalendr, setshowCalendr] = useState(false);
+
+  const show = () => {
+    showCalendr === false ? setshowCalendr(true) : setshowCalendr(false);
+  };
   const taskCreated = [
     {
       id: 1,
@@ -38,6 +48,118 @@ const HomeScreen = ({ navigation }) => {
     },
   ];
 
+  let data = [
+    {
+      value: "Daily",
+    },
+    {
+      value: "Weekly on Tuesday",
+    },
+    {
+      value: "Monthly on the last Tuesday",
+    },
+    {
+      value: "Monthly on the first Tuesday",
+    },
+    {
+      value: "Annually on July 26",
+    },
+    {
+      value: "Every week day (Monday to Friday",
+    },
+    {
+      value: "Custom...",
+    },
+  ];
+
+  let data2 = [
+    {
+      value: "12:00AM",
+    },
+    {
+      value: "12:15AM",
+    },
+    {
+      value: "12:30AM",
+    },
+    {
+      value: "12:45AM",
+    },
+    {
+      value: "01:00AM",
+    },
+    {
+      value: "01:15AM",
+    },
+    {
+      value: "01:30AM",
+    },
+    {
+      value: "01:15AM",
+    },
+    {
+      value: "01:30AM",
+    },
+    {
+      value: "01:45AM",
+    },
+    {
+      value: "02:00AM",
+    },
+    {
+      value: "02:15AM",
+    },
+    {
+      value: "02:30AM",
+    },
+    {
+      value: "02:45AM",
+    },
+  ];
+  let data3 = [
+    {
+      value: "12:00PM",
+    },
+    {
+      value: "12:15PM",
+    },
+    {
+      value: "12:30PM",
+    },
+    {
+      value: "12:45PM",
+    },
+    {
+      value: "01:00PM",
+    },
+    {
+      value: "01:15PM",
+    },
+    {
+      value: "01:30PM",
+    },
+    {
+      value: "01:15PM",
+    },
+    {
+      value: "01:30PM",
+    },
+    {
+      value: "01:45PM",
+    },
+    {
+      value: "02:00PM",
+    },
+    {
+      value: "02:15PM",
+    },
+    {
+      value: "02:30PM",
+    },
+    {
+      value: "02:45PM",
+    },
+  ];
   const oneTask = ({ item }) => {
     return (
       <View
@@ -55,7 +177,7 @@ const HomeScreen = ({ navigation }) => {
         <Image
           source={item.image}
           resizeMode="contain"
-          style={{ width: 30, Height: 5, position: "relative", top: -244 }}
+          style={{ width: 30, position: "relative", top: -244 }}
         />
         <View style={{ width: 230, marginTop: -5, justifyContent: "center" }}>
           <Text
@@ -94,6 +216,7 @@ const HomeScreen = ({ navigation }) => {
       </View>
     );
   };
+  const [checked, setChecked] = useState(false);
   HeaderComponent = () => {
     return (
       <View style={{ width: 200, flexDirection: "row" }}>
@@ -112,33 +235,8 @@ const HomeScreen = ({ navigation }) => {
       </View>
     );
   };
-  // const [selected, setSelected] = React.useState("Does not repeat");
-  // const [firstDa, setFirstDa] = React.useState("12:00am");
-
-  // const data = [
-  //     {key: '1', value: 'Daily'},
-  //     {key: '2', value: 'Weekly on Tuesday'},
-  //     {key: '3', value: 'Monthly on the last Tuesday'},
-  //     {key: '4', value: 'Monthly on the first Tuesday'},
-  //     {key: '5', value: 'Annually on July 26'},
-  //     {key: '6', value: 'Every weekday (Monday to Friday)'},
-  //     {key: '7', value: 'Custom'}
-  // ];
-
-  // const da = [
-  //     {key: '1', value: '12:00am'},{key: '2', value: '12:15am'},{key: '3', value: '12:30am'},{key: '4', value: '12:45am'},{key: '5', value: '01:00am'},
-  //     {key: '6', value: '01:15am'},{key: '7', value: '01:30am'},{key: '8', value: '01:45am'},{key: '9', value: '02:00am'},{key: '10', value: '02:15am'},
-  //     {key: '11', value: '02:30am'},{key: '12', value: '02:45am'},{key: '13', value: '03:00am'},{key: '14', value: '03:15am'},{key: '15', value: '03:30am'},
-  //     {key: '16', value: '03:45am'},{key: '17', value: '04:00am'},{key: '18', value: '04:15am'},{key: '19', value: '04:30am'},{key: '20', value: '04:45am'},
-  //     {key: '21', value: '05:00am'},{key: '22', value: '05:15am'},{key: '23', value: '05:30am'},{key: '24', value: '05:45am'},{key: '25', value: '06:00am'},
-  //     {key: '26', value: '06:15am'},{key: '27', value: '06:30am'},{key: '28', value: '06:45am'},{key: '29', value: '07:00am'},{key: '30', value: '07:15am'},
-  //     {key: '31', value: '07:30am'},{key: '32', value: '07:45am'},{key: '33', value: '08:00am'},{key: '34', value: '08:15am'},{key: '35', value: '08:30am'},
-  //     {key: '36', value: '08:45am'},{key: '37', value: '09:00am'},{key: '38', value: '09:15am'},{key: '39', value: '09:30am'},{key: '40', value: '09:45am'},
-  //     {key: '41', value: '10:00am'},{key: '42', value: '10:15am'},{key: '43', value: '10:30am'},{key: '44', value: '10:45am'},{key: '46', value: '11:00am'},
-  //     {key: '47', value: '11:15am'},{key: '48', value: '11:30am'},{key: '49', value: '11:45am'}
-  // ];
   return (
-    <View style={{ flexDirection: "column", marginTop: 10 }}>
+    <SafeAreaView style={{ flexDirection: "column", marginTop: 25 }}>
       <View style={styles.rectangle5}>
         <View
           style={{
@@ -203,6 +301,8 @@ const HomeScreen = ({ navigation }) => {
           position: "relative",
           top: -32,
           left: 38,
+          paddingStart: 10,
+          paddingEnd: 20,
         }}
       />
       <Image
@@ -320,7 +420,27 @@ const HomeScreen = ({ navigation }) => {
             height: 25,
           }}
         />
-        <Text style={{ marginLeft: 20, marginTop: 10 }}>Jul 26, 2022</Text>
+        <TouchableOpacity onPress={() => show()}>
+          <Text style={{ marginLeft: 20, marginTop: 10 }}>Jul 26, 2022</Text>
+        </TouchableOpacity>
+        {showCalendr && (
+          <Calendar
+            theme={{
+              todayBackgroundColor: "#ff0000",
+              selectDayBackgroundColor: "#ff0000",
+              calendarBackground: "#ffffff",
+            }}
+            //   onDateChange={onDateChange}
+            style={{
+              width: 300,
+              borderRadius: 25,
+              position: "absolute",
+              left: -100,
+              top: 35,
+              opacity: 1,
+            }}
+          />
+        )}
         <Text style={{ marginLeft: 20, marginTop: 10 }}>12:00AM</Text>
         <Image
           source={require("../assets/icons/uncheckbox.png")}
@@ -328,78 +448,151 @@ const HomeScreen = ({ navigation }) => {
           style={{
             position: "relative",
             marginTop: 5,
-            marginLeft: 95,
+            marginLeft: 85,
             width: 35,
             height: 30,
           }}
         />
         <Text style={{ marginTop: 10 }}>All day</Text>
       </View>
+      {/* <Pickers /> */}
+      {/* <TouchableOpacity style={{ backgroundColor: "transparent" }}> */}
+      <Dropdown
+        placeholder="Does not repeat"
+        placeholderTextColor={"black"}
+        paddingStart={0}
+        paddingEnd={0}
+        data={data}
+        fontSize={12}
+        style={{
+          height: 30,
+          marginLeft: "20%",
+          top: "40%",
+          backgroundColor: "transparent",
+          fontSize: 13,
+          width: "73%",
+        }}
+        containerStyle={{
+          width: "70%",
+          borderRadius: 10,
+        }}
+        itemTextStyle={{
+          fontSize: 8,
+          color: "red",
+        }}
+        dropdownOffset={{
+          top: 80,
+          left: 50,
+        }}
+        pickerStyle={{
+          width: "55%",
+          borderRadius: 30,
+        }}
+        itemPadding={7}
+        // ={{
+        //   backgroundColor: "red",
+        // }}
+      />
+
+      <Dropdown
+        placeholder="12:00AM"
+        data={data2}
+        placeholderTextColor={"black"}
+        paddingStart={5}
+        padding={0}
+        borderWidth={2}
+        borderRadius={7}
+        width={"105%"}
+        fontSize={12}
+        style={{
+          height: 30,
+          backgroundColor: "transparent",
+          fontSize: 14,
+          top: "95%",
+          marginLeft: "65%",
+          width: "100%",
+        }}
+        containerStyle={{
+          width: "20%",
+          fontSize: 13,
+          borderRadius: 10,
+        }}
+        itemTextStyle={{
+          fontSize: 8,
+        }}
+        dropdownOffset={{
+          top: 80,
+        }}
+        pickerStyle={{
+          width: "15%",
+          borderRadius: 10,
+          marginTop: "1%",
+          marginLeft: "10%",
+        }}
+      />
+      <Dropdown
+        placeholder="12:00AM"
+        data={data3}
+        placeholderTextColor={"black"}
+        paddingStart={5}
+        padding={0}
+        borderWidth={2}
+        borderRadius={7}
+        width={"105%"}
+        fontSize={12}
+        style={{
+          height: 30,
+          backgroundColor: "transparent",
+          fontSize: 14,
+          marginLeft: "200%",
+          width: "100%",
+        }}
+        containerStyle={{
+          width: "20%",
+          fontSize: 13,
+          borderRadius: 10,
+        }}
+        itemTextStyle={{
+          fontSize: 8,
+        }}
+        dropdownOffset={{
+          top: 80,
+        }}
+        pickerStyle={{
+          width: "22%",
+          borderRadius: 10,
+          marginTop: "1%",
+          marginLeft: 145,
+        }}
+      />
+      <View
+        style={{
+          width: 90,
+          height: 40,
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          top: -35,
+          left: 280,
+          borderWidth: 2,
+          borderRadius: 9,
+          backgroundColor: "#FDB8B8",
+        }}
+      >
+        <Text style={{ fontWeight: "500", fontSize: 15 }}>1hr:00:00</Text>
+      </View>
+
+      {/* </TouchableOpacity> */}
+      {/* <CheckBox checked={checked} onPress={() => setChecked(checked)} /> */}
       <FlatList
+        style={{ marginTop: -18 }}
         ListHeaderComponent={HeaderComponent}
         data={taskCreated}
         renderItem={oneTask}
         ListEmptyComponent={<Text>Empty List</Text>}
       />
-
-      {/* <SelectList  boxStyles = {{
-                    position: 'relative',
-                    width: 150,
-                    marginLeft: 34, 
-                    borderWidth: 0,
-                    marginTop: -75
-                    }} 
-                    dropdownStyles = {{
-                        width: 250,
-                        marginLeft: 34, 
-                        paddingLeft: 0,
-                        backgroundColor: '#FFFFFF',
-                        borderWidth: 0
-                    }}
-                    data = {data} 
-                    setSelected = {setSelected} 
-                    /> */}
-      <View>
-        {/* <SelectList  boxStyles = {{
-                    position: 'absolute',
-                    width: 150,
-                    padding: 0,
-                    marginLeft: 34, 
-                    borderWidth: 1,
-                    marginTop: -35
-                    }} 
-                    dropdownStyles = {{
-                        width: 120,
-                        paddingLeft: 0,
-                        marginLeft: 34, 
-                        backgroundColor: '#FFFFFF',
-                        borderWidth: 0
-                    }}
-                    data = {da} 
-                    setSelected = {setFirstDa} 
-                    /> */}
-      </View>
-      <View>
-        {/* <SelectList  boxStyles = {{
-                    position: 'absolute',
-                    width: 150,
-                    height:10,
-                    padding: 0,
-                    marginLeft: 124, 
-                    borderWidth: 1,
-                    marginTop: -35
-                    }} 
-                    dropdownStyles = {{
-                        width: 250,
-                        marginLeft: 34, 
-                        paddingLeft: 0,
-                        backgroundColor: '#FFFFFF',
-                        borderWidth: 0
-                    }}
-                    data = {data} 
-                    setSelected = {setSelected} 
-                    /> */}
-      </View>
+      <View></View>
+      <View></View>
       <View style={styles.rectangle3}>
         <Image
           source={require("../assets/icons/task1.png")}
@@ -488,11 +681,9 @@ const HomeScreen = ({ navigation }) => {
           Task6
         </Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
-
-export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -520,19 +711,9 @@ const styles = StyleSheet.create({
     marginTop: 5,
     borderRadius: 12,
   },
-  //   task_created_rect: {
-  //     width: 350,
-  //     height: 45,
-  //     padding: 10,
-  //     flexDirection: "row",
-  //     alignSelf: "center",
-  //     marginTop: 5,
-  //     borderRadius: 12,
-  //     backgroundColor: item.backgroundColor,
-  //   },
   rectangle2: {
     width: 375,
-    height: 105,
+    height: 30,
     flexDirection: "row",
     alignSelf: "center",
     borderRadius: 7,
@@ -562,3 +743,5 @@ const styles = StyleSheet.create({
     borderRadius: 7,
   },
 });
+
+export default HomeScreen;

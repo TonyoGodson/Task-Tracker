@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 const CustomTabBarButton = ({ children, onPress }) => (
   <TouchableOpacity
     style={{
-      top: -30,
+      top: -28,
       justifyContent: "center",
       alignItems: "center",
       ...styles.shadow,
@@ -20,8 +20,8 @@ const CustomTabBarButton = ({ children, onPress }) => (
   >
     <View
       style={{
-        width: 60,
-        height: 60,
+        width: 50,
+        height: 50,
         borderRadius: 30,
         backgroundColor: "#34A853",
       }}
@@ -47,7 +47,7 @@ const Tabs = () => {
         },
         headerShown: false,
       }}
-      tabBarOptions={{
+      ScreenOptions={{
         activeTintColor: "#34A853",
         inativeTintColor: "#1E1F4B",
         showLabel: true,
@@ -101,8 +101,8 @@ const Tabs = () => {
               resizeMode="contain"
               style={{
                 top: 7,
-                width: 30,
-                height: 30,
+                width: 25,
+                height: 25,
                 tintColor: "#FFFFFF",
               }}
             />
